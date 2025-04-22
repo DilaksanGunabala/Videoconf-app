@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Conferencing App</title>
+  <link rel="icon" href="assets/icons/weblogo.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>VIDEO CONFERENCE APP</h1>
+    </header>
+
+    <main class="main-content">
+      <div class="video-section">
+        <div class="left-controls">
+          <button id="startCall">Start Call</button>
+          <button id="stopCall">Stop Call</button>
+          <button id="shareScreen">Share Screen</button>
+        </div>
+
+        <div id="videoScreen">
+          <video id="localVideo" autoplay muted playsinline></video>
+        </div>
+
+        <div class="right-controls">
+          <button id="openWhiteboard">Whiteboard</button>
+          <button id="record">Start Recording</button>
+          <button id="logoutBtn">Logout</button>
+        </div>
+      </div>
+
+      <div class="file-upload">
+        <input type="file" id="fileInput" />
+      </div>
+
+      <section id="whiteboardSection" style="display: none;">
+        <h2>Whiteboard</h2>
+        <canvas id="whiteboardCanvas" width="800" height="600"></canvas>
+        <button id="closeWhiteboard">Close Whiteboard</button>
+        <button id="clearWhiteboard">Clear</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/whiteboard.js"></script>
+  <script src="js/video.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script>
+    if (!sessionStorage.getItem('loggedIn')) {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

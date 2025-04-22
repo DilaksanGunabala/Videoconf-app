@@ -1,0 +1,178 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  color: #f1f5f9;
+  min-height: 100vh;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+}
+
+/* Container Styling */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Header */
+header h1 {
+  text-align: center;
+  font-size: 2.6rem;
+  color: #38bdf8;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 15px #0ea5e9;
+}
+
+/* Main Layout */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Video Section Layout */
+.video-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Controls */
+.left-controls,
+.right-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#videoScreen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f172a;
+  border: 2px dashed #38bdf8;
+  border-radius: 20px;
+  padding: 15px;
+  min-height: 300px;
+}
+
+#localVideo {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
+
+/* Stylish Buttons */
+button {
+  background-color: #38bdf8;
+  color: #0f172a;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(56, 189, 248, 0.25);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0ea5e9;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(14, 165, 233, 0.35);
+}
+
+/* File Upload */
+.file-upload {
+  text-align: center;
+}
+
+.file-upload input[type="file"] {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border: 2px dashed #38bdf8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.file-upload input[type="file"]:hover {
+  background-color: #334155;
+  border-color: #0ea5e9;
+}
+
+/* Whiteboard Section */
+#whiteboardSection {
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+#whiteboardSection h2 {
+  color: #fbbf24;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+#whiteboardCanvas {
+  background-color: #ffffff;
+  border: 2px solid #38bdf8;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Tweaks */
+@media screen and (max-width: 768px) {
+  .video-section {
+    flex-direction: column;
+  }
+
+  .left-controls,
+  .right-controls {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  #videoScreen {
+    width: 100%;
+  }
+}
